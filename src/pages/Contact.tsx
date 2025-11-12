@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Mail, Linkedin, Github, FileText } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import Footer from '../components/Footer'
 
 const contactMethods = [
   {
@@ -124,6 +125,9 @@ export default function Contact() {
           </p>
         </motion.div>
       </motion.div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }
