@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { Mail, Linkedin, Github, FileText } from 'lucide-react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Mail, Linkedin, FileText } from 'lucide-react'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import Footer from '../components/Footer'
 
 const contactMethods = [
@@ -17,16 +17,10 @@ const contactMethods = [
     link: 'https://linkedin.com/in/gabriel-rayos',
   },
   {
-    icon: Github,
-    label: 'GitHub',
-    value: '@gabrielrayos',
-    link: 'https://github.com/gabrielrayos',
-  },
-  {
     icon: FileText,
     label: 'Resume',
     value: 'Download CV',
-    link: '#',
+    link: '/Gabriel Rayos - Resume.pdf',
   },
 ]
 

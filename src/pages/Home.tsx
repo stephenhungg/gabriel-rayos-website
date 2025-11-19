@@ -1,209 +1,35 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import ShinyText from '../components/ShinyText'
+import { Link } from 'react-router-dom'
+import ShaderBackground from '../components/ShaderBackground'
 
 export default function Home() {
   const [animationPhase, setAnimationPhase] = useState<'intro' | 'main'>('intro')
 
   useEffect(() => {
-    const timer = setTimeout(() => setAnimationPhase('main'), 2800)
+    // Transition to main phase after shader intro (approx 3s)
+    const timer = setTimeout(() => setAnimationPhase('main'), 3000)
     return () => clearTimeout(timer)
   }, [])
 
   return (
     <div className="min-h-screen flex items-center justify-center overflow-hidden relative">
-
-      {/* Flowing abstract lines that morph into grid */}
-      <motion.div
-        className="absolute inset-0"
-        initial={{ scale: 1.5 }}
-        animate={{ scale: 1 }}
-        transition={{
-          duration: 2.8,
-          ease: [0.22, 1, 0.36, 1]
-        }}
-      >
-        {/* Horizontal lines */}
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={`h-${i}`}
-            className="absolute w-full h-px"
-            style={{ top: `${(i + 1) * 12.5}%` }}
-            initial={{
-              scaleX: 0,
-              y: Math.random() * 200 - 100,
-              rotate: (Math.random() - 0.5) * 45,
-            }}
-            animate={{
-              scaleX: animationPhase === 'intro' ? [0, 1, 0.8, 1] : 1,
-              y: 0,
-              rotate: 0,
-            }}
-            transition={{
-              duration: animationPhase === 'intro' ? 2.5 : 0.8,
-              delay: i * 0.08,
-              ease: [0.34, 1.56, 0.64, 1],
-            }}
-          >
-            {/* White layer - bright during intro, then breathes */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground to-transparent"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: animationPhase === 'intro'
-                  ? [0, 0.8, 0.6, 0.2]
-                  : [0.2, 0.25, 0.15, 0.25, 0.2],
-              }}
-              transition={{
-                duration: animationPhase === 'intro' ? 2.5 : 5,
-                delay: animationPhase === 'intro' ? i * 0.08 : i * 0.15,
-                ease: [0.45, 0.05, 0.55, 0.95],
-                repeat: animationPhase === 'main' ? Infinity : 0,
-              }}
-            />
-            {/* Blue layer - fades in after intro, then breathes opposite to white */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-primary to-transparent"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: animationPhase === 'intro'
-                  ? 0
-                  : [0.1, 0.25, 0.4, 0.25, 0.1],
-              }}
-              transition={{
-                duration: 5,
-                delay: animationPhase === 'main' ? i * 0.15 + 2.5 : 0,
-                ease: [0.45, 0.05, 0.55, 0.95],
-                repeat: animationPhase === 'main' ? Infinity : 0,
-              }}
-            />
-          </motion.div>
-        ))}
-
-        {/* Vertical lines */}
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={`v-${i}`}
-            className="absolute h-full w-px"
-            style={{ left: `${(i + 1) * 12.5}%` }}
-            initial={{
-              scaleY: 0,
-              x: Math.random() * 200 - 100,
-              rotate: (Math.random() - 0.5) * 45,
-            }}
-            animate={{
-              scaleY: animationPhase === 'intro' ? [0, 1, 0.8, 1] : 1,
-              x: 0,
-              rotate: 0,
-            }}
-            transition={{
-              duration: animationPhase === 'intro' ? 2.5 : 0.8,
-              delay: i * 0.08,
-              ease: [0.34, 1.56, 0.64, 1],
-            }}
-          >
-            {/* White layer - bright during intro, then breathes */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-b from-transparent via-foreground to-transparent"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: animationPhase === 'intro'
-                  ? [0, 0.8, 0.6, 0.2]
-                  : [0.2, 0.25, 0.15, 0.25, 0.2],
-              }}
-              transition={{
-                duration: animationPhase === 'intro' ? 2.5 : 5,
-                delay: animationPhase === 'intro' ? i * 0.08 : i * 0.15 + 0.1,
-                ease: [0.45, 0.05, 0.55, 0.95],
-                repeat: animationPhase === 'main' ? Infinity : 0,
-              }}
-            />
-            {/* Blue layer - fades in after intro, then breathes opposite to white */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-b from-transparent via-primary to-transparent"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: animationPhase === 'intro'
-                  ? 0
-                  : [0.1, 0.25, 0.4, 0.25, 0.1],
-              }}
-              transition={{
-                duration: 5,
-                delay: animationPhase === 'main' ? i * 0.15 + 2.6 : 0,
-                ease: [0.45, 0.05, 0.55, 0.95],
-                repeat: animationPhase === 'main' ? Infinity : 0,
-              }}
-            />
-          </motion.div>
-        ))}
-
-        {/* Flowing particles */}
-        {animationPhase === 'intro' && [...Array(30)].map((_, i) => (
-          <motion.div
-            key={`particle-${i}`}
-            className="absolute w-1 h-1 bg-foreground rounded-full"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              opacity: 0,
-            }}
-            animate={{
-              x: [
-                Math.random() * window.innerWidth,
-                window.innerWidth / 2 + (Math.random() - 0.5) * 400,
-                window.innerWidth / 2,
-              ],
-              y: [
-                Math.random() * window.innerHeight,
-                window.innerHeight / 2 + (Math.random() - 0.5) * 400,
-                window.innerHeight / 2,
-              ],
-              opacity: [0, 0.8, 0],
-              scale: [0, 2, 0],
-            }}
-            transition={{
-              duration: 2.5,
-              delay: i * 0.03,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          />
-        ))}
-
-        {/* Center burst effect */}
-        {animationPhase === 'intro' && (
-          <>
-            {[...Array(12)].map((_, i) => (
-              <motion.div
-                key={`burst-${i}`}
-                className="absolute top-1/2 left-1/2 origin-left h-px bg-gradient-to-r from-foreground to-transparent"
-                style={{
-                  rotate: `${i * 30}deg`,
-                  width: '40%',
-                }}
-                initial={{ scaleX: 0, opacity: 0 }}
-                animate={{
-                  scaleX: [0, 1, 0.5],
-                  opacity: [0, 0.9, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  delay: 1 + i * 0.05,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              />
-            ))}
-          </>
-        )}
-
-      </motion.div>
+      
+      {/* Shader Background - Visible immediately for the morph intro */}
+      <div className="absolute inset-0 z-0">
+        <ShaderBackground />
+        {/* Overlay to ensure text readability - Darker gradient for better contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/80 to-background/30 backdrop-blur-[3px]" />
+        <div className="absolute inset-0 bg-background/40" />
+      </div>
 
       {/* Main content */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: animationPhase === 'main' ? 1 : 0 }}
         transition={{
-          delay: animationPhase === 'main' ? 0 : 0,
-          duration: 0.8,
+          duration: 1.0,
           ease: [0.22, 1, 0.36, 1]
         }}
         className="text-center z-10 relative"
@@ -240,7 +66,7 @@ export default function Home() {
             duration: 1,
             ease: [0.22, 1, 0.36, 1]
           }}
-          className="font-sans text-xl md:text-2xl text-muted-foreground mb-4"
+          className="font-sans text-xl md:text-2xl text-foreground/80 mb-4 font-medium"
         >
           UC Berkeley &mdash; Mechanical Engineering
         </motion.p>
@@ -256,37 +82,41 @@ export default function Home() {
             duration: 1,
             ease: [0.22, 1, 0.36, 1]
           }}
-          className="font-sans italic text-base md:text-lg text-muted-foreground/70 max-w-2xl mx-auto mb-8 leading-relaxed"
+          className="font-sans italic text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed font-medium drop-shadow-sm"
         >
           Designing innovative mechanical systems and pushing the boundaries of engineering.
           <br />
-          <span className="text-primary/60">Formula racing enthusiast, researcher, and builder.</span>
+          <span className="text-primary font-semibold">Formula racing enthusiast, researcher, and builder.</span>
         </motion.p>
 
-        {/* Scroll indicator */}
+        {/* Call to action */}
         {animationPhase === 'main' && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              delay: 0.8,
-              duration: 0.8,
-              ease: [0.22, 1, 0.36, 1]
-            }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.75, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10"
           >
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: [0.45, 0.05, 0.55, 0.95]
-              }}
-              className="text-primary/50 text-sm font-sans"
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-8 py-3 font-sans text-sm uppercase tracking-[0.2em] text-primary hover:bg-primary/20 transition-colors"
             >
-              <div className="w-px h-16 bg-gradient-to-b from-primary/50 to-transparent mx-auto mb-2" />
-              Explore
-            </motion.div>
+              View Projects
+            </Link>
+            <a
+              href="/Gabriel Rayos - Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-3 font-sans text-sm uppercase tracking-[0.2em] text-foreground hover:border-primary/40 hover:text-primary transition-colors"
+            >
+              Resume
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-3 font-sans text-sm uppercase tracking-[0.2em] text-foreground hover:border-primary/40 transition-colors"
+            >
+              Let&apos;s Talk
+            </Link>
           </motion.div>
         )}
       </motion.div>

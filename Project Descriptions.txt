@@ -1,0 +1,354 @@
+﻿Personal Projects
+
+
+⭐ Vendi — Compact Snack Vending Machine
+Tools: OnShape, DFM/DFA, CAD, Manufacturing, Arduino
+Timeline: Feb 2025 – May 2025
+Role: Hardware & Mechanical Design Team (CAD + Manufacturing)
+Website: Vendi - Smart Vending Solutions
+Overview
+Vendi is a compact, student-developed vending machine designed to deliver reliable snack dispensing, intuitive user interaction, and accessible internal servicing. I contributed to the hardware and mechanical design team, focusing on CAD development and manufacturing support.
+Design Process
+* Designed the machine’s structural frame in OnShape using DFM/DFA principles to reduce part count and simplify fabrication.
+
+* Integrated a spiral-coil dispensing mechanism tuned for consistent item drop paths.
+
+* Contributed to enclosure design, bracket mounting, and internal alignment features.
+
+* Collaborated with the electronics team to integrate Arduino control, servo-driven mechanisms, and UI buttons.
+
+* Assisted with fabrication and assembly during the build phase, ensuring design fidelity and smooth fit-up.
+
+Technical Decisions
+   * Implemented front and rear panel doors for streamlined restocking and maintenance.
+
+   * Designed a secure retrieval door to prevent unauthorized access while maintaining smooth user operation.
+
+   * Optimized internal geometry to support wiring paths, servo mounts, and consistent coil rotation.
+
+Outcome
+      * Achieved 100% dispensing reliability, validated through repeated testing cycles.
+
+      * Improved serviceability through accessible panel doors and simplified internal layout.
+
+      * Produced a robust and manufacturable vending system suitable for further expansion and iteration.
+
+________________
+
+
+⭐ Autonomous Line-Following Robot
+Tools: SolidWorks, Arduino, 3D Printing
+Timeline: Jul 2025 – Aug 2025
+Role: Sole Designer, Fabricator & Programmer
+Overview
+Designed and built a miniature autonomous robot capable of following a taped path using infrared sensors and Arduino-based control logic.
+Design Process
+         * Modeled a compact chassis in SolidWorks with mounting points for motors, PCB, and an IR sensor array.
+
+         * 3D printed multiple prototypes to reduce weight and improve stiffness, particularly around motor mounts.
+
+         * Programmed forward, stop, left-turn, and right-turn logic in Arduino, tuning thresholds for sensor detection.
+
+Technical Notes
+            * Faulty or inconsistent IR sensors created instability under certain lighting conditions, limiting continuous autonomous operation.
+
+            * Performance analysis confirmed the design’s viability; improved sensors would substantially increase success rate.
+
+Outcome
+               * Achieved medium success rate with partial autonomous navigation.
+
+               * Validated chassis design and control logic; future revision planned with higher-quality sensor modules.
+
+________________
+
+
+⭐ Miniature Wind Turbine
+Tools: SolidWorks, FEA, 3D Printing
+Timeline: Feb 2025 – May 2025
+Role: Mechanical Designer & Structural Analyst
+Overview
+Developed and analyzed a fully functional miniature wind turbine featuring a 3-blade rotor, 16-inch tower, and enclosed motor housing.
+Design Process
+                  * Modeled aerodynamic blades, tower, and housing in SolidWorks.
+
+                  * Researched blade pitches, angles of attack, and airfoil profiles to optimize performance.
+
+                  * Applied FEA to refine the stiffness-to-weight ratio and ensure structural stability at high RPM.
+
+Testing & Results
+Tested at 25 mph wind speed, achieving:
+                     * RPM: 5354 rpm
+
+                     * Voltage: 3.38 V
+
+                     * Power Output: 394.1 mW (0.394 W)
+
+                     * Stiffness: 5.88 N/mm (previously optimized through FEA)
+
+Outcome
+                        * Produced a strong, cost-efficient turbine with measurable power generation.
+
+                        * Demonstrated direct impact of blade geometry and stiffness on electrical output.
+
+________________
+
+
+⭐ Multipurpose Attachable Bed Stand
+Tools: SolidWorks, GD&T, FEA, DFM/DFA, 3D Printing
+Timeline: Feb 2025 – May 2025
+Role: Sole Designer (Concept → CAD → Analysis)
+Slideshow: Personal Project
+Overview
+Designed a versatile bed-mounted stand capable of holding everyday items such as a phone, earbuds, water bottle, and charging cable — all while remaining stable, compact, and easy to manufacture.
+Design Process
+                           * Modeled an adjustable clamping mechanism compatible with common bed frames.
+
+                           * Created part drawings with GD&T to ensure precise fit between components.
+
+                           * Applied DFM/DFA to reduce complexity and optimize for 3D printing.
+
+                           * Used FEA to validate load-bearing capacity, checking deflection, stress concentrations, and clamping stability.
+
+Outcome
+                              * Delivered a functional, user-friendly stand suitable for bedside device storage.
+
+                              * Geometry and GD&T ensured reliable fit and easy assembly for a fully 3D-printed workflow.
+
+
+
+
+
+BFR
+
+
+⭐ Wheel Center Design Project
+Tools: SolidWorks, FEA, DFM, CNC Machining, Materials Selection
+Timeline: (Add dates if needed)
+ Role: Sole Mechanical Designer & Analyst
+Slideshow: Gabriel Rayos - Drivetrain Presentation
+Overview
+Designed a lightweight aluminum wheel center capable of withstanding high torsional and lateral loads while maintaining manufacturability and structural safety. The final design met weight, strength, stiffness, and factor-of-safety requirements while optimized for 3-axis CNC machining.
+Problem
+Develop a wheel center that:
+                                 * Weighs under 0.33 lbs
+
+                                 * Maintains ≥1.3 Factor of Safety
+
+                                 * Achieves ≤0.5 mm displacement
+
+                                 * Withstands peak loads of:
+
+                                    * 687 lbf torque
+
+                                    * 185 lbf (Y-direction)
+
+                                    * 296 lbf (Z-direction)
+
+This required balancing structural rigidity, geometry optimization, material selection, and manufacturability constraints.
+Design Process
+                                       * Modeled a lightweight 8-spoke wheel center with load paths optimized for torque and bending stresses.
+
+                                       * Selected 7075-T6 Aluminum for its high specific strength and excellent machinability.
+
+                                       * Integrated critical features including fillets, lug holes, and weight-reduction slots.
+
+                                       * Positioned lug holes strategically to handle torque transfer and minimize stress risers.
+
+                                       * Applied DFM principles to ensure all features could be manufactured on a 3-axis CNC mill.
+
+                                       * Used GD&T and tolerancing to define critical fits and lug-pattern alignment.
+
+                                       * Iteratively refined geometry—adjusting spoke thickness, chamfers, and pocketing—to reduce weight while maintaining structural performance.
+
+Stress Analysis & Technical Work
+                                          * Performed FEA to evaluate Von Mises stress, deflection, and load distribution across spokes and the hub region.
+
+                                          * Analyzed the effects of torque, lateral loads, and combined loading conditions.
+
+                                          * Conducted optimization cycles:
+
+                                             * Removed non-load-bearing material
+
+                                             * Increased fillet radii to reduce stress concentrations
+
+                                             * Adjusted cutout geometry to improve stiffness-to-weight ratio
+
+                                                * Verified manufacturability: cutter access, tool approach vectors, minimum fillet radii, and clamping considerations.
+
+Results
+                                                   * Weight: 0.32994 lbs (met target of <0.33 lbs)
+
+                                                   * Factor of Safety: 1.377 (exceeded 1.3 requirement)
+
+                                                   * Maximum Displacement: 0.6819 mm (slightly above 0.5 mm target but structurally acceptable under peak loading)
+
+                                                   * Material: 7075-T6 Aluminum
+
+                                                   * Design: 8-spoke with optimized cutouts, fillets, and lug pattern
+
+Outcome
+                                                      * Delivered a high-performance wheel center balancing strength, manufacturability, and weight optimization.
+
+                                                      * Demonstrated ability to design for real-world loading scenarios through FEA, iterative refinement, and material-driven engineering judgment.
+
+                                                      * Gained strong understanding of structural load interaction in wheels, CNC constraints, and optimization-driven design.
+⭐ FSAE Tripod Housing Development — Inboard & Outboard Joints (In Progress)
+Tools: ANSYS, SolidWorks, Lathe + CNC + EDM Manufacturing, Materials Research
+Timeline: Fall 2025 – Present
+Role: Manufacturing Lead & Design Research Engineer (Drivetrain Subteam)
+Overview
+This ongoing project involves understanding, manufacturing, and eventually redesigning the inboard and outboard tripod housings used in our FSAE drivetrain. I am responsible for leading the part’s fabrication while developing a deep understanding of load paths, contact mechanics, Hertzian stresses, and the failure modes that govern future design decisions.
+Problem
+The tripod housings must withstand extreme torque and impact loads transmitted through the driveshaft while maintaining low friction and predictable compliance. With a new engine upgrade introducing higher peak loads, the existing housing design may become insufficient. My goal is to understand the current design at a detailed level so I can confidently redesign it when new load conditions are finalized.
+Design Research
+                                                         * Analyzed the current tripod housing geometry to understand load transfer between the tripod trunnions and the bearing surfaces.
+
+                                                         * Studied Hertzian contact theory to understand how deformation and contact pressure influence wear and fatigue.
+
+                                                         * Investigated bolt preload and compression forces on the housing structure, identifying regions most sensitive to clamping and shear stresses.
+
+                                                         * Evaluated surface interactions between the tripod rollers and housing channels, noting the sensitivity of contact patch geometry to small changes in radius, width, and surface finish.
+
+Simulation Work
+                                                            * Learned to run structural simulations in ANSYS, including:
+
+                                                               * Hertzian contact stress analyses
+
+                                                               * Bolt preload & torque clamp simulations
+
+                                                               * Stress distributions through the housing ribs and webs
+
+                                                               * Displacement and deformation under worst-case torque
+
+                                                                  * Established a baseline FEA workflow for future redesigns, including meshing strategies, boundary conditions, and convergence checks.
+
+Manufacturing Leadership
+                                                                     * Serving as Manufacturing Lead for the current year’s tripod housings.
+
+                                                                     * Responsible for full fabrication pipeline:
+
+                                                                        * Lathe machining for turning operations
+
+                                                                        * CNC machining for complex pockets, spline interfaces, and contours
+
+                                                                        * EDM for precision slotting, tight tolerances, and internal geometries
+
+                                                                           * Coordinated manufacturing constraints with design decisions, ensuring the part remains feasible to fabricate within team resources.
+
+Future Design Intent
+                                                                              * Preparing to redesign the tripod housing if the upgraded engine introduces higher torque or lateral loads.
+
+                                                                              * Building knowledge to adjust:
+
+                                                                                 * Contact surface profiles (radius, width, chamfer geometry)
+
+                                                                                 * Rib thickness and support structure
+
+                                                                                 * Material selection & heat treatment
+
+                                                                                 * Internal clearances and roller travel paths
+
+                                                                                 * Bolt patterns, torque distribution, and web stiffening
+
+                                                                                    * Goal: Produce a next-gen housing with improved fatigue life, lower Hertzian stress, and manufacturability optimized for our student shop’s capabilities.
+
+Outcome (In Progress)
+                                                                                       * Developed a comprehensive understanding of the tripod housing’s function, loads, and wear mechanisms.
+
+                                                                                       * Established a reliable simulation workflow for validating future design changes.
+
+                                                                                       * Leading the machining and production of the current housing with Lathe + CNC + EDM workflows.
+
+                                                                                       * Positioned to take full ownership of the redesigned housing next season when new load conditions are released.
+
+
+
+
+⭐ Machining Skills & Fabrication Development
+Tools & Equipment: Manual Lathe, Vertical Mill, Bandsaw, Drill Press, Belt Sander
+Status: Ongoing Skills Development
+Overview
+Alongside my engineering design work, I have been developing hands-on machining skills to strengthen my ability to take parts from CAD to manufactured reality. This training supports my contributions to FSAE and personal engineering projects, ensuring I can design with manufacturability, tolerances, and fixturing in mind.
+Skills & Training
+                                                                                          * Lathe Trained: Facing, turning, drilling, parting, and tolerance control.
+
+                                                                                          * Mill Trained: Squaring stock, pocketing, drilling patterns, slotting, and edge finishing.
+
+                                                                                          * Bandsaw & Drill Press: Safe stock preparation, hole creation, and shop workflow familiarity.
+
+                                                                                          * Sanding & Deburring: Surface finishing, chamfering, tolerance cleanup, and post-machining refinement.
+
+Practical Experience
+                                                                                             * Fabricated go/no-go gauge plates used for jigging and quality control.
+
+                                                                                                * Performed milling operations to achieve precise dimensional differences between pass/fail sides.
+
+                                                                                                * Demonstrated ability to hold tight tolerances, deburr edges, and deliver repeatable parts.
+
+                                                                                                * Gained experience with metrology tools (calipers, micrometers, height gauges) to validate accuracy.
+
+Outcome
+                                                                                                   * Developed strong foundational machining skills to support manufacturing-ready design.
+
+                                                                                                   * Improved intuition for tolerancing, cutter access, stock setup, and fixturing.
+
+                                                                                                   * Built a bridge between analytical engineering and hands-on fabrication — enabling better DFM and more realistic design decisions in future projects.
+
+
+
+
+Research
+
+
+⭐ Acoustic Holography Research — Piezoelectric Transducer Experimental Setup (In Progress)
+Tools: SolidWorks, 3D Printing, Acrylic Fabrication, PCB Integration, Experimental Design
+Affiliation: Liwei Lin Lab, UC Berkeley
+ Timeline: Fall 2025 – Present
+Role: Undergraduate Researcher (Experimental Design & Prototyping)
+Overview
+This project explores the creation of acoustic holograms using piezoelectric transducers to manipulate and pattern biological cells suspended in water. I am designing the experimental platform that will support future hologram testing, cell imaging, and acoustic field validation.
+Problem
+To study acoustic holography, the lab needs a stable, modular experimental system that:
+                                                                                                      * Precisely positions a petri dish above a PCB-mounted piezoelectric transducer
+
+                                                                                                      * Holds a water-filled acoustic tank with optically clear walls
+
+                                                                                                      * Maintains alignment between transducer, water column, and sample
+
+                                                                                                      * Supports integration of custom 3D-printed acoustic holograms
+
+                                                                                                      * Minimizes mechanical noise and allows for repeatable, controlled testing
+
+Design Process
+                                                                                                         * Created a 3D-printed base platform with mounting features for the PCB board and piezoelectric transducer.
+
+                                                                                                         * Designed a petri-dish holder that maintains consistent height and alignment during imaging.
+
+                                                                                                         * Modeled the acrylic tank walls for the water bath, focusing on optical clarity, rigidity, and low distortion for imaging.
+
+                                                                                                         * Considered constraints such as water depth, standing-wave formation, imaging angle, and wave attenuation.
+
+                                                                                                         * Ensured modularity of all components to allow rapid redesign as experimental conditions evolve.
+
+Current Work
+                                                                                                            * Integrating the base assembly with the transducer PCB and verifying mechanical alignment.
+
+                                                                                                            * Preparing the water tank and evaluating optical characteristics for imaging cell responses.
+
+                                                                                                            * Running preliminary trials to observe how cells move in response to the acoustic field.
+
+Next Steps (Design + Research Direction)
+                                                                                                               * Design a custom 3D-printed acoustic hologram (phase plate) to shape the emitted acoustic wavefront.
+
+                                                                                                               * Test whether the hologram produces a target field distribution and desired cell spatial patterns.
+
+                                                                                                               * Iterate hologram geometries based on observed cell behavior and measured acoustic fields.
+
+                                                                                                               * Explore multi-layer hologram designs, frequency tuning, and material modifications.
+
+Outcome (In Progress)
+                                                                                                                  * Developed the foundational experimental infrastructure for acoustic hologram testing.
+
+                                                                                                                  * Enabled controlled visualization of cell patterns formed by acoustic fields.
+
+                                                                                                                  * Gaining experience in wave mechanics, experimental design, PCB integration, and bio-acoustic imaging.
