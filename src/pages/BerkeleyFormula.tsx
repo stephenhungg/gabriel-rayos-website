@@ -52,7 +52,6 @@ const drivetrainProjects = [
     tools: ['ANSYS', 'SolidWorks', 'Lathe', 'CNC', 'EDM', 'Materials Research'],
     overview:
       'Ongoing effort to understand, manufacture, and eventually redesign the tripod housings that couple the driveshaft to the differential.',
-    media: [{ src: '/images/BFR/1 - Machining.HEIC', caption: 'Machining workflows for drivetrain hardware' }],
     sections: [
       {
         title: 'Design Research',
@@ -89,6 +88,11 @@ const skillHighlights = [
   'Fabricated go/no-go gauge plates used for jigging and quality control with metrology verification.',
   'Hands-on experience informs DFM decisions and bridges the gap between CAD intent and shop realities.',
 ]
+
+const machiningShowcase = {
+  src: '/images/BFR/1 - Machining.HEIC',
+  caption: 'Machining workflows for drivetrain hardware',
+}
 
 export default function BerkeleyFormula() {
   return (
@@ -182,6 +186,16 @@ export default function BerkeleyFormula() {
                   </li>
                 ))}
               </ul>
+              <motion.figure
+                className="mt-8 rounded-xl overflow-hidden border bg-background/40"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6 }}
+              >
+                <img src={machiningShowcase.src} alt={machiningShowcase.caption} className="w-full h-64 object-cover" loading="lazy" />
+                <figcaption className="px-4 py-3 text-sm text-muted-foreground">{machiningShowcase.caption}</figcaption>
+              </motion.figure>
             </CardContent>
           </Card>
         </motion.div>
